@@ -1,0 +1,18 @@
+{% extends 'layouts/index.html' %}
+
+{% block product %}
+    <div class="product_block">
+        <div class="image">
+            <img src="/media/{{ product.image }}" alt="" width="420" >
+        </div>
+        <div class="info">
+            <h1>{{ product.title }}  Price {{ product.price }}</h1>
+            <h4>{{ product.compound }}</h4>
+        </div>
+        <div class="review">
+            <h1>Name:{{review.name}} country:{{ review.country }} </h1>
+            <h4>{{ review.review }}</h4>
+            <h7>{{ review.mark_review }}</h7>
+        </div>
+    </div>
+{% endblock %}

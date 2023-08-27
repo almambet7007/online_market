@@ -1,23 +1,28 @@
 {% extends 'layouts/index.html' %}
 
 {% block product %}
-    <div class="product">
+    <div class = 'product' style="display: flex; justify-content: space-between; width: auto">
          {% for productos in product %}
              <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="/media/{{ productos.image }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{ productos.title }}</h5>
-    <p class="card-text">Name: {{ productos.compound }}</p>
-      {% for categories in productos.connection.all %}
-          <p>{{ categories.kind_food }}</p>
-          <p>{{ categories.count }}</p>
+    <p class="card-text">Rate : {{ productos.price }}</p>
+        {% for review in productos.conn_review.all %}
+            <p>{{ review.name }}</p>
+            <p>{{ review.country }}</p>
+            <p>{{ review.review }}</p>
+            <p>{{ review.mark_review }}</p>
+            {% endfor %}
+      {% for catygories in productos.category.all %}
+          <p>{{ catygories.kind_of_food }}</p>
+          <p>{{ catygories.count }}</p>
        {% endfor %}
-    <a href="#" class="btn btn-primary">More product</a>
+    <a href="/product/{{ productos.id }}/" class="btn btn-primary">More</a>
   </div>
 </div>
          {% endfor %}
 
     </div>
-
 
 {% endblock %}

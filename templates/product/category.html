@@ -1,0 +1,17 @@
+{% extends 'layouts/index.html' %}
+
+{% block product %}
+    <div class = 'category'>
+         {% for cotegories in category %}
+             <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ cotegories.kind_of_food }}</h5>
+    <p class="card-text">Count: {{ cotegories.count }}</p>
+    <a href="#" class="btn btn-primary">Mooore</a>
+  </div>
+</div>
+         {% endfor %}
+
+    </div>
+{% endblock %}

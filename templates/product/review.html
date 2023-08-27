@@ -1,0 +1,18 @@
+{% extends 'layouts/index.html' %}
+
+{% block product %}
+    <div class="review">
+        {% for review in reviews %}
+           <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ review.name }}</h5>
+    <h6 class="card-country">{{ review.country }}</h6>
+    <p class="card-text"> {{ review.review }}</p>
+    <h7 class="card-mark">{{ review.mark_review }}</h7>
+    <a href="#" class="btn btn-primary">More</a>
+  </div>
+</div>
+        {% endfor %}
+    </div>
+{% endblock %}
